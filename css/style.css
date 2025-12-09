@@ -1,0 +1,990 @@
+/* تنظیمات پایه */
+:root {
+    --primary-color: #004d40; /* زمردی تیره */
+    --accent-color: #e6b200;  /* طلایی */
+    --text-dark: #333;
+    --text-light: #fff;
+    --bg-light: #fcfcfc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* فونت انگلیسی */
+    line-height: 1.7;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    direction: ltr; /* پیش‌فرض انگلیسی */
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+/* کلاس مخصوص زمانی که زبان فارسی شود */
+body.rtl {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Vazirmatn', Tahoma, sans-serif; /* فونت فارسی */
+}
+
+.container {
+    width: 90%;
+    max-width: 1280px;
+    margin: auto;
+    overflow: hidden;
+}
+
+a { text-decoration: none; }
+
+/* --- هدر و ناوبری --- */
+#main-header {
+    background: var(--primary-color);
+    color: var(--text-light);
+    padding: 22px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    color: rgb(236, 159, 215);
+}
+
+.logo-img {
+    width: 55px;
+    height: 55px;
+    margin-right: 5px; /* فاصله در حالت انگلیسی */
+}
+body.rtl .logo-img {
+    margin-right: 10px;
+    margin-left: 10px; /* فاصله در حالت فارسی */
+}
+
+.logo h1 {
+    font-size: 25px;
+    font-weight: 900;
+    font-size:medium;
+}
+
+#main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+#main-nav a {
+    color: var(--text-light);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px;
+    transition: color 0.4s;
+}
+
+#main-nav a:hover, #main-nav a.active {
+    color: var(--accent-color);
+}
+
+/* استایل بخش اکشن هدر (زبان + سوشال) */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-icons-header {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons-header img {
+    width: 3px;
+    height: 24px;
+    filter: brightness(0) invert(1); /* سفید کردن آیکون‌ها */
+    transition: transform 0.3s;
+}
+.social-icons-header img:hover { transform: scale(1.1); }
+
+.language-switcher button {
+    background: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.language-switcher button:hover {
+    background: #ffc107;
+}
+
+/* --- Hero Section --- */
+#hero-section {
+    position: relative;
+    height: 80vh;
+    background: url('../images/mountains.jpeg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+}
+
+#hero-heading {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+#hero-paragraph {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--accent-color);
+    color: var(--primary-color);
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.cta-button:hover { background: #fff; }
+
+/* --- Features Grid --- */
+#key-features { padding: 80px 0; }
+
+#key-features h3 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    text-align: center;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    border-top: 4px solid var(--primary-color);
+    transition: transform 0.3s;
+}
+.feature-card:hover { transform: translateY(-10px); }
+
+.feature-icon { width: 60px; margin-bottom: 20px; }
+
+.feature-card h4 {
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+/* --- Featured Tours --- */
+#featured-tours {
+    background: #f4f4f4;
+    padding: 80px 0;
+}
+#featured-tours h3 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+}
+
+.tours-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.tour-preview {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    max-width: 380px;
+    transition: transform 0.3s;
+}
+.tour-preview:hover { transform: translateY(-5px); }
+
+.tour-image-wrapper { height: 250px; overflow: hidden; }
+.tour-image { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+.tour-preview:hover .tour-image { transform: scale(1.1); }
+
+.tour-info { padding: 20px; }
+.tour-preview h4 { color: var(--primary-color); margin-bottom: 10px; }
+.details-link {
+    display: block;
+    margin-top: 15px;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* --- Why Us --- */
+#why-travel-us {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 60px 0;
+}
+#why-travel-us h3 { color: var(--accent-color); margin-bottom: 20px; font-size: 2rem; }
+
+/* --- Footer --- */
+#main-footer {
+    background: #222;
+    color: #ccc;
+    padding: 40px 0 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: #fff;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+.footer-links a:hover { color: var(--accent-color); }
+
+.social-icons-footer { margin-top: 10px; }
+.social-icons-footer img {
+width: 40px !important;
+height: 40px !important;
+ 
+margin: 0 10px; /* این خط فاصله را ایجاد می‌کند */
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+    .header-container { flex-direction: column; gap: 15px; }
+    #main-nav ul { flex-direction: column; text-align: center; gap: 10px; }
+    #hero-heading { font-size: 2.5rem; }
+}
+/* --- استایل‌های صفحه Tours --- */
+
+/* هدر کوچک صفحه */
+.page-header-bg {
+    background: url('../images/bdk\ view\ 2.jpeg') no-repeat center center/cover;
+    height: 40vh; /* ارتفاع کمتر از صفحه اصلی */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+.page-header-bg .overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 48, 40, 0.7); /* فیلتر سبز تیره */
+}
+
+.page-header-bg .container { position: relative; z-index: 2; }
+.page-header-bg h2 { font-size: 3rem; margin-bottom: 10px; }
+
+/* کارت‌های تور کامل (Tour Cards) */
+#all-tours { padding: 60px 0; }
+
+.tour-card-full {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+    margin-bottom: 30px; /* فاصله بین کارت‌ها */
+}
+
+/* در دسکتاپ، عکس و متن کنار هم باشند */
+@media(min-width: 768px) {
+    .tour-card-full {
+        flex-direction: row;
+        height: 280px;
+    }
+    .tour-img-box { flex: 2; }
+    .tour-details { flex: 3; }
+}
+
+.tour-img-box {
+    position: relative;
+    overflow: hidden;
+}
+
+.tour-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.tour-card-full:hover .tour-img { transform: scale(1.05); }
+
+.tour-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--accent-color);
+    color: var(--primary-color);
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 4px;
+}
+/* راست‌چین شدن بج در حالت فارسی */
+body.rtl .tour-badge { left: auto; right: 15px; }
+
+.tour-details {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tour-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.tour-details h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.tour-details p {
+    color: #555;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+/* دکمه‌ها */
+.tour-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-outline {
+    padding: 10px 20px;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.btn-fill {
+    padding: 10px 20px;
+    background: var(--primary-color);
+    color: #fff;
+    border-radius: 5px;
+    font-weight: 600;
+}
+.btn-fill:hover { background: var(--accent-color); color: var(--primary-color); }
+
+
+/* --- استایل‌های صفحه Heritage --- */
+
+/* بک‌گراند متفاوت برای هدر این صفحه */
+.heritage-bg {
+    background: url('../images/profi.jpeg') no-repeat center center/cover; /* عکس پس‌زمینه موقت */
+}
+
+/* بخش مقدمه */
+.intro-text-section {
+    padding: 60px 0;
+    background: #fff;
+}
+#heritage-intro-heading {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+#heritage-intro-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* آیتم‌های میراث (طراحی زیگزاگ) */
+#historical-sites {
+    padding-bottom: 60px;
+}
+
+.heritage-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
+    gap: 40px;
+}
+
+@media(min-width: 768px) {
+    .heritage-item {
+        flex-direction: row; /* عکس و متن کنار هم */
+    }
+    
+    /* کلاس reverse-layout برای برعکس کردن چیدمان (عکس سمت راست) */
+    .heritage-item.reverse-layout {
+        flex-direction: row-reverse;
+    }
+}
+
+.heritage-img-box {
+    flex: 1;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.heritage-img {
+    width: 100%;
+    height: 100%; /* ارتفاع تصویر */
+    max-height: 400px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s;
+}
+.heritage-img:hover { transform: scale(1.05); }
+
+.heritage-info {
+    flex: 1;
+    padding: 20px;
+}
+
+.heritage-info h3 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.heritage-info h4 {
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.heritage-info p {
+    font-size: 1rem;
+    line-height: 1.9;
+    color: #444;
+}
+
+/* بخش فرهنگ زنده (Living Culture) */
+#living-culture {
+    background-color: #fdfbf7; /* رنگ کرم خیلی روشن */
+    padding: 80px 0;
+    border-top: 1px solid #eee;
+}
+
+#living-culture h3 {
+    margin-bottom: 50px;
+    font-size: 2.2rem;
+    color: var(--primary-color);
+}
+
+.culture-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.culture-card {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    background: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    border-bottom: 4px solid transparent;
+}
+
+.culture-card:hover {
+    border-bottom: 4px solid var(--accent-color);
+    transform: translateY(-5px);
+}
+
+.icon-circle {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    background: #fff8e1;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.culture-card h4 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    font-size: 1.3rem;
+}
+/* --- استایل‌های صفحه Gallery --- */
+
+.gallery-bg {
+    background: url('../images/Band\ amir.jpg') no-repeat center center/cover; /* عکس پس‌زمینه موقت پامیر */
+}
+
+#photo-gallery {
+    padding: 60px 0;
+    background: #fcfcfc;
+}
+
+#gallery-section-heading, #video-section-heading {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    border-bottom: 3px solid var(--accent-color);
+    display: inline-block;
+    padding-bottom: 5px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* گرید ریسپانسیو */
+    gap: 20px;
+}
+
+.gallery-item {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    height: 300px; /* ارتفاع ثابت برای زیبایی گرید */
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover .gallery-img {
+    transform: scale(1.1);
+}
+
+.caption-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: rgba(0, 77, 64, 0.8); /* زمردی نیمه‌شفاف */
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transform: translateY(100%); /* پنهان کردن کپشن */
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover .caption-overlay {
+    transform: translateY(0); /* نمایش کپشن هنگام هاور */
+}
+
+/* بخش ویدیوها */
+#video-section {
+    padding: 60px 0;
+    background: #f7f7f7;
+}
+
+.video-container-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.video-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.video-card iframe {
+    display: block;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.video-card p {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-align: center;
+}
+
+/* --- استایل‌های صفحه Safety --- */
+
+.safety-bg {
+    background: url('../images/kabul.jpg') no-repeat center center/cover; /* عکس پس‌زمینه موقت کابل */
+}
+
+#safety-guide-content {
+    padding: 60px 0;
+    background: #fdfdfd;
+}
+
+.safety-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+}
+
+@media(max-width: 900px) {
+    .safety-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.safety-item {
+    background: #fff;
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+    border-left: 5px solid var(--primary-color); /* تاکید بصری */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.03);
+    transition: box-shadow 0.3s;
+}
+
+.safety-item:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.safety-item h3 {
+    color: var(--primary-color);
+    font-size: 1.35rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.safety-item p {
+    color: #444;
+    line-height: 1.8;
+}
+
+/* بخش توجه مهم (Important Notice) */
+#important-notice {
+    padding: 40px 0 80px 0;
+}
+
+.notice-box {
+    background: #fff3cd; /* زرد ملایم برای هشدار */
+    color: #856404; /* متن تیره */
+    border: 1px solid #ffeeba;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.notice-box h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.notice-box p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* --- استایل‌های صفحه Contact --- */
+
+.contact-bg {
+    background: url('../images/pamir\ caml.jpeg') no-repeat center center/cover; /* عکس پس‌زمینه موقت */
+}
+
+#contact-details-form {
+    padding: 60px 0;
+}
+
+.contact-layout {
+    display: flex;
+    gap: 40px;
+}
+
+@media(max-width: 900px) {
+    .contact-layout {
+        flex-direction: column; /* در موبایل عمودی شود */
+    }
+}
+
+.contact-form-container {
+    flex: 2;
+    padding: 30px;
+    background: #fcfcfc;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.direct-details-container {
+    flex: 1;
+    padding: 30px;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+#form-heading, #direct-contact-heading, #team-heading {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+/* استایل فرم */
+.form-group {
+    margin-bottom: 20px;
+}
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
+.contact-form textarea { resize: vertical; }
+
+.form-note {
+    margin-top: 15px;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* استایل اطلاعات تماس مستقیم */
+.contact-details p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #444;
+}
+.contact-details a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+.contact-details a:hover { text-decoration: underline; }
+
+/* استایل بخش معرفی و عکس دایره‌ای */
+.team-intro {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.team-photo-container {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px auto;
+    border-radius: 50%; /* دایره‌ای شدن تصویر */
+    overflow: hidden;
+    box-shadow: 0 0 0 5px rgb(190, 234, 68), 0 0 0 8px var(--primary-color); /* حاشیه دور عکس */
+}
+
+.team-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#team-name {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+#team-title {
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+#team-quote {
+    font-style: italic;
+    color: #555;
+    padding: 0 10px;
+    font-size: 0.95rem;
+}
+/* ========================================= */
+/* --- استایل‌های اختصاصی صفحه درباره ما (About Us) --- */
+/* ========================================= */
+
+/* پس‌زمینه عنوان صفحه */
+.about-bg {
+    /* 💡 اینجا یک عکس زیبا و مناسب برای هیرو سکشن صفحه About Us قرار دهید */
+    background-image: url('../images/mountains.jpeg'); 
+}
+
+/* بخش اصلی معرفی (شامل عکس و متن) */
+.about-content-grid {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    padding: 40px 0;
+}
+
+/* برای دستگاه‌های کوچک، نمایش را به حالت بلوک تغییر دهید */
+@media (max-width: 768px) {
+    .about-content-grid {
+        flex-direction: column;
+    }
+}
+
+.about-text {
+    flex: 1;
+    max-width: 60%;
+}
+
+@media (max-width: 768px) {
+    .about-text {
+        max-width: 100%;
+        order: 2; /* متن را بعد از عکس نمایش می‌دهد */
+    }
+}
+
+.about-image {
+    flex: 1;
+    max-width: 40%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+    .about-image {
+        max-width: 100%;
+        order: 1; /* عکس را قبل از متن نمایش می‌دهد */
+        margin-bottom: 30px;
+    }
+}
+
+.responsive-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- بخش مأموریت و ارزش‌ها --- */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* ۳ ستون مساوی */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .values-grid {
+        grid-template-columns: 1fr; /* در موبایل یک ستون */
+    }
+}
+
+.value-item {
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.value-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.value-item h4 {
+    font-size: 1.3em;
+    color: var(--primary-color); /* استفاده از رنگ اصلی سایت شما */
+    margin-bottom: 15px;
+}
+
+/* استایل‌های کمکی (اگر از قبل ندارید) */
+.section-padding {
+    padding: 60px 0;
+}
+
+.bg-light {
+    background-color: #f8f8f8;
+}
+
+.bg-dark {
+    background-color: #1a4d33; /* رنگ تیره‌تر برای بخش CTA */
+    color: white;
+}

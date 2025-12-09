@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="contact-page-title">Contact Us | Afghanistan Travel Tourist Adventure</title>
+    
+    <meta name="description" content="Contact Afghanistan Travel Tourist Adventure for booking inquiries, custom tours, or any questions about traveling to Afghanistan.">
+    <link rel="icon" href="logo/genicon.ico" type="image/x-icon"> 
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    
+    <header id="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo/genicon.ico" alt="Afghanistan Travel Tourist Adventure" class="logo-img"> 
+                    <h1>Afghanistan Travel Tourist Adventure</h1>
+                </a>
+            </div>
+            
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html" id="home-link">Home</a></li>
+                    <li><a href="tours.html" id="tours-link">Tours</a></li>
+                    <li><a href="heritage.html" id="heritage-link">Heritage</a></li>
+                    <li><a href="gallery.html" id="gallery-link">Gallery</a></li>
+                    <li><a href="safety.html" id="safety-link">Safety Guide</a></li>
+                    <li><a href="contact.html" id="contact-link" class="active">Contact</a></li> </ul>
+            </nav>
+            
+            
+                
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header-bg contact-bg">
+        <div class="overlay"></div>
+        <div class="container text-center">
+            <h2 id="contact-hero-title">Let's Plan Your Journey</h2>
+            <p id="contact-hero-text">We are here to answer your questions and customize your Afghan adventure.</p>
+        </div>
+    </section>
+
+    <section id="contact-details-form">
+        <div class="container contact-layout">
+            
+            <div class="contact-form-container">
+                <h3 id="form-heading">Send Us a Quick Message</h3>
+                
+                <form action="YOUR_SERVER_SCRIPT_HERE" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="name" id="form-name-label">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" id="form-email-label">Your Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" id="form-subject-label">Subject</label>
+                        <input type="text" id="subject" name="subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="message" id="form-message-label">Your Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-fill" id="form-submit-btn">Send Message</button>
+                    
+                    <p class="form-note" id="form-backend-note">Note: This form requires server-side integration to send emails.</p>
+                </form>
+            </div>
+            
+            <div class="direct-details-container">
+                
+                <h3 id="direct-contact-heading">Direct Contact Information</h3>
+                <div class="contact-details">
+                    <p>📧 <strong id="detail-email">Email:</strong> <a href="mirwais.far001@gmail.com">mirwais.far001@gmail.com</a></p>
+                    <p>📞 <strong id="detail-phone">Phone/WhatsApp:</strong> <a href="https://wa.me/+93790058455">+93790058455</a></p>
+                    <p>📍 <strong id="detail-address">Address:</strong> <span id="address-text">Fiazabad, Badakhshan, Afghanistan</span></p>
+                </div>
+
+                <hr>
+
+                <div class="team-intro">
+                    <h3 id="team-heading">Meet the Founder</h3>
+                    
+                    <div class="team-photo-container">
+                        <img src="images/Mirwis Farzan.jpg" alt="Website Founder Photo" class="team-photo"> 
+                    </div>
+                    
+                    <h4 id="team-name">Mirwais Farzam</h4>
+                    <p id="team-title">Founder and Director</p>
+                    <p id="team-quote">"We believe in responsible tourism that benefits local communities and preserves heritage."</p>
+                    
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer id="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="about.html" id="about-us-link">About Us</a>
+                    <a href="privacy.html" id="privacy-link">Privacy Policy</a>
+                    <a href="faq.html" id="faq-link">FAQ</a>
+                </div>
+              </div>
+               <div class="social-icons-footer">
+                    <a href="https://wa.me/+93790058455"><img src="logo/whatsapp.ico" alt="WhatsApp" ></a>
+                    <a href="https://www.facebook.com/mirwais.farzan"><img src="logo/Facebok real.ico" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/mirwaisfarzan?igsh=MWM0ZTV2eWcxamswdQ=="><img src="logo/Real instagram.ico" alt="Instagram"></a>
+                </div>
+            </div>
+            </div>
+            <p class="copyright">
+                &copy; <span id="current-year"></span> Afghanistan Travel Tourist Adventure. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+    
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+    <script src="js/scripts.js"></script> 
+</body>
+</html>
